@@ -1,0 +1,18 @@
+<div class="manfred-info">
+  <div class="manfred-profile" style="background-image: url({{profilePicture}})"></div>
+  <div class="info-container">
+    <h1 class="yellow mont-bold">{{bioHeader}}</h1>
+    <p class="hind-regular">{{bio}}</p>
+  </div>
+</div>
+
+
+<div class="flex">
+  {{#each information }}
+    <div class="video-container">
+      {{{this.embed}}}
+    </div>
+  {{else}}
+    <p class="empty">I haven't published any videos, because I suck.</p>
+  {{/each}}
+</div>

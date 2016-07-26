@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: sans-serif;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.video-container {
+  flex: 1 1 auto;
+  width: 33%;
+}
+
+nav {
+  height: 25px;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: padding 1s, background-color 1s;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+  display: inline-block;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: #242F49;
+  opacity: 0.25;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+a {
+  margin: 0 30px;
+  margin-top: 10px;
+  position: relative;
+  top: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: #FFE13F
+}
+
+.mont-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.mont-bold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.hind-regular {
+  font-family: 'Hind', sans-serif;
+  font-weight: 400;
+}
+
+.hind-regular {
+  font-family: 'Hind', sans-serif;
+  font-weight: 600;
+}
+
+.yellow {
+  color: #FFE13F
+}
+
+.text-hero {
+  width: 50%;
+  height: 11%;
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.manfred-info {
+  position: relative;
+  width: 100%;
+  background-color: #242F49;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.manfred-profile {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  border-radius: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.info-container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+.triangle-connector {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 150px solid #242F49;
+  position: relative;
+  top: 84vh;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+}
