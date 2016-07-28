@@ -1,2 +1,2 @@
-./config/secret/
+config/secret/vimeo-tokens.js
 node_modules
