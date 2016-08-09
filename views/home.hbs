@@ -1,3 +1,4 @@
+<div class="info-anchor"></div>
 <div class="manfred-info">
   <div class="manfred-profile" style="background-image: url({{profilePicture}})"></div>
   <div class="info-container">
@@ -6,12 +7,20 @@
   </div>
 </div>
 
-
+<div class="portfolio-anchor"></div>
 <div class="flex">
   {{#each information }}
-    <div class="video-container">
-      {{{this.embed}}}
+  {{#if this.rowEnd}}
     </div>
+  {{/if}}
+  {{#if this.rowStart}}
+    <div class="row">
+  {{/if}}
+      <div class="video-container">
+        <div class="video-thumbnail" data-value="{{this.embed}}" style="background-image: url({{this.thumbnail}})">
+          {{> play-button}}
+        </div>
+      </div>
   {{else}}
     <p class="empty">I haven't published any videos, because I suck.</p>
   {{/each}}

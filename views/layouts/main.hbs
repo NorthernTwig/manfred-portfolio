@@ -9,15 +9,28 @@
   <link href="https://fonts.googleapis.com/css?family=Hind:400,600" rel="stylesheet" type="text/css">
   <title>Manfred Ohlsson</title>
 </head>
-<body>
+<body class="top">
+
 
   {{> nav}}
+
+  {{> admin}}
+
   {{> header}}
+
 
   {{{body}}}
 
+  {{> footer}}
+
+  <script src="./javascript/embedSrc.js"></script>
+  <script src="./javascript/imageResize.js"></script>
   <script src="./javascript/parallax.js"></script>
   <script src="./javascript/navbar.js"></script>
   <script src="./javascript/slowscroll.js"></script>
+  <script src="./javascript/setColor.js"></script>
+  {{#if loggedIn}}
+  <script src="./javascript/admin.js"></script>
+  {{/if}}
 </body>
 </html>

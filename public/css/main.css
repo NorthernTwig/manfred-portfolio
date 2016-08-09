@@ -10,9 +10,27 @@ iframe {
   height: 100%;
 }
 
+.row {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  position: relative;
+  bottom: 5px;
+}
+
 .video-container {
   flex: 1 1 auto;
-  width: 33%;
+  width: 100%;
+  height: 350px;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+  z-index: 1;
+  position: relative;
 }
 
 nav {
@@ -22,8 +40,32 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
-  transition: padding 1s, background-color 1s;
+  z-index: 10;
+  transition: padding 500ms, background-color 500ms;
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  padding: 50px;
+  background-color: #242F49;
+  text-align: center;
+}
+
+.credit {
+  text-decoration: underline;
+}
+
+h8 {
+  font-size: 0.85vw;
+}
+
+h7 {
+  color: rgb(255, 225, 63);
+  position: relative;
+  top: 35%;
+  font-size: 1vw;
+  transform: translateY(-50%);
 }
 
 li {
@@ -36,6 +78,7 @@ header {
   width: 100%;
   height: 100vh;
   background-size: cover;
+  background-position: center;
 }
 
 .overlay {
@@ -48,7 +91,7 @@ header {
   left: 0;
 }
 
-a {
+nav a {
   margin: 0 30px;
   margin-top: 10px;
   position: relative;
@@ -84,7 +127,17 @@ a:hover {
 }
 
 .yellow {
-  color: #FFE13F
+  color: #FFE13F;
+}
+
+.info-anchor {
+  position: relative;
+  top: 5px;
+}
+
+.portfolio-anchor {
+  position: relative;
+  top: 1px;
 }
 
 .text-hero {
@@ -135,4 +188,65 @@ a:hover {
 .flex {
   display: flex;
   flex-flow: row wrap;
+  background-color: black;
+}
+
+.play {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 35%;
+  height: 35%;
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+.play:hover {
+  width: 40%;
+  height: 40%;
+}
+
+.login-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: #242F49;
+  width: 100vw;
+  height: 100vh;
+}
+
+.input-login {
+  color: black;
+}
+
+.admin-square {
+  color: black;
+  width: 25%;
+  height: 50%;
+  background-color: #242F49;
+  position: fixed;
+  outline: 9px solid white;
+  text-align: center;
+  z-index: 2000;
+}
+
+.radio-placement {
+  display: inline;
+}
+
+.radio-container {
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.text-hero .mont-regular span h1 {
+  font-size: 4.5vw;
+  display: inline;
+  margin: 0.5vw;
+}
+
+.text-hero h5 {
+  font-size: 2vw;
 }
