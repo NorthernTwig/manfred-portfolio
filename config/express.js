@@ -36,10 +36,14 @@ module.exports = () => {
 
   app.use(express.static("public"));
 
+
+  // Skaffa nya nycklar retard
   // setInterval(function() {
     // apiRequest();
   // }, 3600);
 //3600000
+
+
   app.use("/", require("../routes/home"));
   app.use("/", require("../routes/update"));
   app.use("/", require("../routes/login"));

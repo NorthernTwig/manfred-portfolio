@@ -19,8 +19,14 @@ let rescale = (width, imageWidth, imageHeight, image, rows) => {
 
     widthings = rows[y].children.length;
 
-    width = window.innerWidth;
-    imageWidth = (width/widthings);
+    width = window.outerWidth;
+    
+    if (width > 800) {
+      imageWidth = (width/widthings);
+    } else {
+      imageWidth = (width/1);
+    }
+
     imageHeight = window.innerHeight < (imageWidth/16 * 9) ? window.innerHeight : (imageWidth/16 * 9);
 
     for (let i = 0; i < rows[y].children.length; i++) {
@@ -33,4 +39,4 @@ let rescale = (width, imageWidth, imageHeight, image, rows) => {
 
 }
 
-window.addEventListener("load", resizing);
+resizing();

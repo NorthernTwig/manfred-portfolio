@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/NorthernTwig/manfred-portfolio#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "cheerio": "^0.20.0",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",

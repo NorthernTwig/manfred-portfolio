@@ -11,7 +11,12 @@ let anchorPosition = (e) => {
 
   // Where is the anchor?
   let tag = e.target.getAttribute("href");
-  let anchor = document.querySelector(tag).offsetTop - 50;
+  let anchor = null;
+  if (window.outerWidth > 800) {
+    anchor = document.querySelector(tag).offsetTop - 50;
+  } else {
+    anchor = document.querySelector(tag).offsetTop;
+  }
   return anchor;
 
 }
@@ -64,7 +69,7 @@ let performScrollAction = (e) => {
 
 let anchorLink = () => {
 
-  let navbar = document.querySelectorAll(".nav-bar a");
+  let navbar = document.querySelectorAll("nav a");
 
   for (let i = 0;i < navbar.length; i++) {
     navbar[i].addEventListener("click", performScrollAction, false);
@@ -73,7 +78,7 @@ let anchorLink = () => {
 }
 
 let getDistance = () => {
-  let links = document.querySelectorAll(".nav-bar a");
+  let links = document.querySelectorAll("nav a");
   let linkArr = [];
   let tag = "";
   let anchor = 0;
@@ -81,7 +86,13 @@ let getDistance = () => {
 
   for (let i = 0; i < links.length; i++) {
     tag = links[i].getAttribute("href");
-    anchor = document.querySelector(tag).offsetTop - 50;
+
+    if (window.outerWidth > 800) {
+      anchor = document.querySelector(tag).offsetTop - 50;
+    } else {
+      anchor = document.querySelector(tag).offsetTop;
+    }
+    
     linkArr.push(anchor);
   }
 
@@ -89,7 +100,7 @@ let getDistance = () => {
 }
 
 let turnWhite = () => {
-  let links = document.querySelectorAll(".nav-bar a");
+  let links = document.querySelectorAll("nav a");
 
   for (let i = 0; i < links.length; i++) {
     links[i].style.color = "";
@@ -98,7 +109,7 @@ let turnWhite = () => {
 }
 
 let getLinks = () => {
-  let links = document.querySelectorAll(".nav-bar a");
+  let links = document.querySelectorAll("nav a");
 
 
   let current = currentPosition() + 50;
