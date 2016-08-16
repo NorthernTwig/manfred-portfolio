@@ -11,4 +11,4 @@ let pageCheck = (header) => {
   header.style.backgroundPosition =  "50% " + (this.pageYOffset / 3) + "px";
 }
 
-window.addEventListener("load", scroll);
+scroll();

@@ -92,7 +92,7 @@ let getDistance = () => {
     } else {
       anchor = document.querySelector(tag).offsetTop;
     }
-    
+
     linkArr.push(anchor);
   }
 

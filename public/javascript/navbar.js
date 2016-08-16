@@ -13,7 +13,7 @@ let navChange = (nav) => {
 
   if (window.pageYOffset >= 100) {
     nav.style.padding = "10px 0";
-      nav.style.backgroundColor = "rgba(0, 0, 0, 0.75)";
+    nav.style.backgroundColor = "rgba(0, 0, 0, 0.75)";
   } else {
     nav.style.padding = "0";
     nav.style.backgroundColor = "rgba(0, 0, 0, 0)";
@@ -21,4 +21,4 @@ let navChange = (nav) => {
 
 }
 
-window.addEventListener("load", navbar);
+navbar();
