@@ -111,7 +111,6 @@ let turnWhite = () => {
 let getLinks = () => {
   let links = document.querySelectorAll("nav a");
 
-
   let current = currentPosition() + 50;
   let distance = getDistance();
 
@@ -129,6 +128,6 @@ let getLinks = () => {
 
 }
 
+getLinks();
 window.addEventListener("scroll", getLinks);
-
 anchorLink();

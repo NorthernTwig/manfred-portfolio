@@ -212,7 +212,7 @@ a:hover {
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.74902);
   height: 0px;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   top: 0;
   right: 0;
@@ -222,7 +222,6 @@ a:hover {
 .expand {
   height: 100vh;
   width: 100vw;
-  position: absolute;
   top: 0;
   right: 0;
 }

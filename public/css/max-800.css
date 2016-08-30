@@ -17,10 +17,11 @@
 
   .hamburger-container {
     display: inline;
-    width:75px;
-    height: 75px;
+    width: 55px;
+    height: 50px;
     background-color:rgba(0, 0, 0, 0.74902);
-    right: 0;
+    right: 20px;
+    top: 20px;
     left: inherit;
     border-radius: 2px;
   }
@@ -32,12 +33,16 @@
   }
 
   .hamburger svg {
-    cursor: pointer;
-    width: 75px;
+    width: 55px;
     position: absolute;
-    height: 75px;
-    right: 0;
+    height: 50px;
+    right: 20px;
     cursor: pointer;
+    top: 20px;
+  }
+
+  a:hover {
+    color: #FFFFFF;
   }
 
   li {
