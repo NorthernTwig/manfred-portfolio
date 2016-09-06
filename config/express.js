@@ -6,7 +6,7 @@ const session = require("express-session");
 const bodyParser = require('body-parser')
 const apiRequest = require("../routes/request");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8081;
 const secret = require("./secret/session-secret.js");
 
 module.exports = () => {
@@ -38,10 +38,10 @@ module.exports = () => {
 
 
   // Skaffa nya nycklar retard
-  // setInterval(function() {
-    // apiRequest();
-  // }, 3600);
-//3600000
+  setInterval(function() {
+    apiRequest();
+  }, 3600000);
+//
 
 
   app.use("/", require("../routes/home"));
