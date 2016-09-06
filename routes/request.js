@@ -12,9 +12,9 @@ module.exports = () => {
           console.log("sc", status_code);
           console.log("hd", headers);
           if (error) {
-            // return res.render("home", {
-            //   information: "error"
-            // });
+            return res.render("home", {
+              information: "error"
+            });
             console.log(error);
           }
 
