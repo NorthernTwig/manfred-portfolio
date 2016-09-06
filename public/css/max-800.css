@@ -26,6 +26,10 @@
     border-radius: 2px;
   }
 
+  .info-container {
+    width: 85%;
+  }
+
   .hamburger-container svg {
     cursor: pointer;
     width: 100%;
