@@ -39,7 +39,7 @@ module.exports = () => {
 
   // Skaffa nya nycklar retard
   // setInterval(function() {
-    apiRequest();
+    // apiRequest();
   // }, 3600000);
 //
 
