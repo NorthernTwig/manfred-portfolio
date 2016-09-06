@@ -4,7 +4,7 @@
 let scroll = (e) => {
   let header = document.querySelector("header");
   pageCheck(header);
-  window.addEventListener("scroll", pageCheck.bind(null, header));
+  window.addEventListener("scroll", pageCheck.bind(null, header), false);
 }
 
 let pageCheck = (header) => {
