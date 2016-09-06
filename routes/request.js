@@ -9,13 +9,12 @@ module.exports = () => {
 
       lib.request({ path : "/users/alanmasferrer/videos" },
         function (error, body, status_code, headers) {
-          console.log("sc", status_code);
-          console.log("hd", headers);
+          // console.log("sc", status_code);
+          // console.log("hd", headers);
           if (error) {
             return res.render("home", {
               information: "error"
             });
-            console.log(error);
           }
 
           let video = {};
@@ -65,10 +64,9 @@ module.exports = () => {
           lib.request({ path : "/users/alanmasferrer" },
             function (error, body, status_code, headers) {
               if (error) {
-                // return res.render("home", {
-                //   information: "error"
-                // });
-                console.log(error);
+                return res.render("home", {
+                  information: "error"
+                });
               }
 
               profilePicture = body.pictures.sizes[(body.pictures.sizes.length - 1)].link;
