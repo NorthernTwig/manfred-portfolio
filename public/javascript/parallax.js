@@ -8,7 +8,9 @@ let scroll = (e) => {
 }
 
 let pageCheck = (header) => {
-  header.style.backgroundPosition =  "50% " + (this.pageYOffset / 3) + "px";
+  if (window.outerWidth > 800) {
+    header.style.backgroundPosition =  "50% " + (this.pageYOffset / 3) + "px";
+  } 
 }
 
 scroll();
