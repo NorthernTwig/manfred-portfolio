@@ -23,17 +23,17 @@ router.route( "/" )
     let loggedIn = req.session.user == undefined ?  false : req.session.user.loggedIn;
 
     VimeoInformation.findOne(function(req, info) {
-      information = info.information;
-      header = info.header;
-      profilePicture = info.profilePicture;
-      bioHeader = info.bioHeader;
-      bio = info.bio;
+      information = info.information || "hej";
+      header = info.header || "hej";
+      profilePicture = info.profilePicture || "hej";
+      bioHeader = info.bioHeader || "hej";
+      bio = info.bio || "hej";
     })
     .then(() => {
       return StaticText.findOne(function(req, info) {
-        bigText = info.bigText;
-        smallText = info.smallText;
-        titlePart = info.titlePart;
+        bigText = info.bigText || "hej";
+        smallText = info.smallText || "hej";
+        titlePart = info.titlePart || "hej";
       });
     })
     .then(() => {
