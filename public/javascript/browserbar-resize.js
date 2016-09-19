@@ -13,4 +13,4 @@ const resizer = (header) => {
   header.style.height = getHeight() + "px";
 }
 
-window.addEventListener("load", selector());
+selector();
