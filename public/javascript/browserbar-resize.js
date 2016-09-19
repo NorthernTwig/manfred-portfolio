@@ -13,4 +13,5 @@ const resizer = (header) => {
   header.style.height = getHeight() + "px";
 }
 
+resizer();
 selector();
