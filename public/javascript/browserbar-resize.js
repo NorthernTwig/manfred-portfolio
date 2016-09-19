@@ -7,7 +7,9 @@ const selector = () => {
 }
 
 const getHeight = () => {
-  return screen.height - window.screenTop;
+  setTimeout(() => {
+    return window.innerHeight;
+  }, 100);
 }
 
 const resizer = (header) => {
