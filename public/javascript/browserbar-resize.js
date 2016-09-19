@@ -7,10 +7,10 @@ const selector = () => {
 }
 
 const getHeight = () => {
-  // setTimeout(() => {
+  setTimeout(() => {
     // console.log(window.outerHeight);
     return window.innerHeight;
-  // }, 100);
+  }, 100);
 }
 
 const resizer = (header) => {
