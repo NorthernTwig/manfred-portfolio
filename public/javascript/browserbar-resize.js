@@ -7,7 +7,7 @@ const selector = () => {
 }
 
 const getHeight = () => {
-  setTimeout(() => {
+  window.setTimeout(() => {
     // console.log(window.outerHeight);
     return window.innerHeight;
   }, 100);
