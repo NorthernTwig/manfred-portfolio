@@ -11,6 +11,7 @@ const getHeight = () => {
 }
 
 const resizer = (header) => {
+  getHeight();
   header.style.height = getHeight() + "px";
   header.firstElementChild.style.height = getHeight() + "px";
 }
