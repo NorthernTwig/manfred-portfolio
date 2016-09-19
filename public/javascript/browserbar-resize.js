@@ -2,6 +2,7 @@
 
 const selector = () => {
   let header = document.querySelector("header");
+  resizer(header);
   window.addEventListener("orientationchange", resizer.bind(null, header));
 }
 
@@ -13,5 +14,4 @@ const resizer = (header) => {
   header.style.height = getHeight() + "px";
 }
 
-resizer();
 selector();
