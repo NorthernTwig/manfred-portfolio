@@ -2,8 +2,7 @@
 
 const selector = () => {
   let header = document.querySelector("header");
-  console.log(header);
-  resizer(header);
+  window.addEventListener("resize", resizer.bind(null, header));
 }
 
 const getHeight = () => {
@@ -11,7 +10,7 @@ const getHeight = () => {
 }
 
 const resizer = (header) => {
-    header.style.height = `${getHeight()} px`;
+  header.style.height = getHeight() + "px";
 }
 
-selector();
+window.addEventListener("load", selector());
