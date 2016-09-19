@@ -3,7 +3,7 @@
 const selector = () => {
   let header = document.querySelector("header");
   resizer(header);
-  window.addEventListener("orientationchange", resizer.bind(null, header));
+  window.addEventListener("orientationchange", resizer.bind(null, header), false);
 }
 
 const getHeight = () => {
@@ -11,9 +11,9 @@ const getHeight = () => {
 }
 
 const resizer = (header) => {
-  getHeight();
-  header.style.height = getHeight() + "px";
-  header.firstElementChild.style.height = getHeight() + "px";
+  let height = getHeight();
+  header.style.height = height + "px";
+  header.firstElementChild.style.height = height + "px";
 }
 
 selector();
