@@ -3,11 +3,11 @@
 const selector = () => {
   let header = document.querySelector("header");
   resizer(header);
-  window.addEventListener("orientationchange", resizer.bind(null, header), false);
+  window.addEventListener("orientationchange", resizer.bind(null, header), true);
 }
 
 const getHeight = (header) => {
-  let currentHeight = window.getComputedStyle(header).getPropertyValue("height")
+  let currentHeight = window.getComputedStyle(header).getPropertyValue("webkitLogicalHeight")
   return currentHeight;
 }
 
