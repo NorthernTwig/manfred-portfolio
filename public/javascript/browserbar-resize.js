@@ -43,29 +43,27 @@
 
 const getHeaderElement = () => {
   let header = document.querySelector("header");
-  console.log("fixar header");
   return header;
 }
 
 const getHeaderHeight = (header) => {
   let headerHeight = window.getComputedStyle(header).getPropertyValue("height");
-  console.log("header höjd");
   return headerHeight;
 }
 
 const restoreHeaderHeight = (header) => {
-  console.log("återställer höjd till 100vh");
   header.style.height = "100vh";
 }
 
 const setHeaderHeight = (header, headerHeightInPixels) => {
-  console.log("Sätter till 100vh i pixlar");
   header.style.height = headerHeightInPixels;
+  header.firstElementChild.style.height = headerHeightInPixels;
+  header.children[2].style.top = headerHeightInPixels.split("px")[0] - 50 + "px";
 }
 
 const headerOrientationListener = (header, heightInPixels) => {
   restoreHeaderHeight(header);
-  setTimeout(function() {
+  setTimeout(() => {
     heightInPixels = getHeaderHeight(header);
     setHeaderHeight(header, heightInPixels);
   }, 150);
