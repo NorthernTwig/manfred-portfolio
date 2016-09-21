@@ -21,24 +21,57 @@
 //     console.log(header);
 // }
 
-const checkHeight = (header) => {
-  let currentHeight = window.getComputedStyle(header).getPropertyValue("height");
-  return currentHeight;
-}
-
-const fuckinghell = () => {
-  let header = document.querySelector("header");
-  header.style.height = "100vh";
-  let tjosan = window.getComputedStyle(header).getPropertyValue("height");
-  header.style.height = tjosan;
+// const checkHeight = (header) => {
+//   let currentHeight = window.getComputedStyle(header).getPropertyValue("height");
+//   return currentHeight;
+// }
+//
+// const fuckinghell = () => {
+//   let header = document.querySelector("header");
+//   header.style.height = "100vh";
+//   let tjosan = window.getComputedStyle(header).getPropertyValue("height");
+//   header.style.height = tjosan;
   // console.log(checkHeight(header));
   // console.log(tjosan);
 
-  // let currentHeight = checkHeight(header);
+  // let currentHeight = checkHeigeadeht(header);
   // window.addEventListener("orientationchange", () => {
       // console.log(screen.orientation.angle);
   // });
+// }
+
+
+const getHeaderElement = () => {
+  let header = document.querySelector("header");
+  console.log("fixar header");
+  return header;
 }
 
-window.addEventListener("orientationchange", fuckinghell);
+const getHeaderHeight = (header) => {
+  let headerHeight = window.getComputedStyle(header).getPropertyValue("height");
+  console.log("header höjd");
+  return headerHeight;
+}
+
+const restoreHeaderHeight = (header) => {
+  console.log("återställer höjd till 100vh");
+  header.style.height = "100vh";
+}
+
+const setHeaderHeight = (header, headerHeightInPixels) => {
+  console.log("Sätter till 100vh i pixlar");
+  header.style.height = headerHeightInPixels;
+}
+
+const initSetHeaderHeight = () => {
+  window.addEventListener("resize", () => {
+    restoreHeaderHeight(getHeaderElement());
+    let height = getHeaderHeight(getHeaderElement());
+    setHeaderHeight(getHeaderElement(), height);
+  });
+}
+
+initSetHeaderHeight();
+
+// window.addEventListener("orientationchange", fuckinghell);
 // test();
