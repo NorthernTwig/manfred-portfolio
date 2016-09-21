@@ -64,7 +64,7 @@ const setHeaderHeight = (header, headerHeightInPixels) => {
 }
 
 const initSetHeaderHeight = () => {
-  window.addEventListener("resize", () => {
+  window.addEventListener("orientationchange", () => {
     restoreHeaderHeight(getHeaderElement());
     let height = getHeaderHeight(getHeaderElement());
     setHeaderHeight(getHeaderElement(), height);
