@@ -3,12 +3,15 @@
 const selector = () => {
   let header = document.querySelector("header");
   resizer(header);
-  window.addEventListener("resize", resizer.bind(null, header));
+  window.addEventListener("orientationchange", resizer.bind(null, header));
 }
 
 const getHeight = (header) => {
-  let currentHeight = window.getComputedStyle(header).getPropertyValue("height");
-  return currentHeight;
+  setTimeout(() => {
+    let currentHeight = window.getComputedStyle(header).getPropertyValue("height");
+    // console.log(currentHeight);
+    return currentHeight;
+  }, 100);
 }
 
 const resizer = (header) => {
