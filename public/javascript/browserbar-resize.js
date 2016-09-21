@@ -7,17 +7,17 @@ const selector = () => {
 }
 
 const getHeight = (header) => {
-  setTimeout(() => {
+  setTimeout(function() {
     let currentHeight = window.getComputedStyle(header).getPropertyValue("height");
-    // console.log(currentHeight);
+    console.log(currentHeight);
     return currentHeight;
   }, 100);
 }
 
 const resizer = (header) => {
-  let height = getHeight(header);
-  header.style.height = height;
-  header.firstElementChild.style.height = height;
+    let height = getHeight(header);
+    header.style.height = height;
+    header.firstElementChild.style.height = height;
 }
 
 selector();
