@@ -63,12 +63,19 @@ const setHeaderHeight = (header, headerHeightInPixels) => {
   header.style.height = headerHeightInPixels;
 }
 
+const headerOrientationListener = (header, heightInPixels) => {
+  restoreHeaderHeight(header);
+  setTimeout(function() {
+    heightInPixels = getHeaderHeight(header);
+    setHeaderHeight(header, heightInPixels);
+  }, 1000);
+}
+
 const initSetHeaderHeight = () => {
-  window.addEventListener("orientationchange", () => {
-    restoreHeaderHeight(getHeaderElement());
-    let height = getHeaderHeight(getHeaderElement());
-    setHeaderHeight(getHeaderElement(), height);
-  });
+  let heightInPixels = "";
+  let header = getHeaderElement();
+  headerOrientationListener(header, heightInPixels);
+  window.addEventListener("orientationchange", headerOrientationListener.bind(null, header, heightInPixels), false);
 }
 
 initSetHeaderHeight();
