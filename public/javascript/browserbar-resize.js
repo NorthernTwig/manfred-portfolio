@@ -68,7 +68,7 @@ const headerOrientationListener = (header, heightInPixels) => {
   setTimeout(function() {
     heightInPixels = getHeaderHeight(header);
     setHeaderHeight(header, heightInPixels);
-  }, 1000);
+  }, 150);
 }
 
 const initSetHeaderHeight = () => {
