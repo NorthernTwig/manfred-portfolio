@@ -22,22 +22,23 @@
 // }
 
 const checkHeight = (header) => {
-  // let header = document.querySelector("header");
   let currentHeight = window.getComputedStyle(header).getPropertyValue("height");
-  // console.log(currentHeight);
   return currentHeight;
 }
 
-
-const test = () => {
-  let testing = "";
+const fuckinghell = () => {
   let header = document.querySelector("header");
-  header.style.height = checkHeight(header);
-  window.addEventListener("orientationchange", function() {
-    testing = checkHeight(header);
-    // currentHeight = window.getComputedStyle(header).getPropertyValue("height");
-    header.style.height = testing;
-  });
+  header.style.height = "100vh";
+  let tjosan = window.getComputedStyle(header).getPropertyValue("height");
+  header.style.height = tjosan;
+  // console.log(checkHeight(header));
+  // console.log(tjosan);
+
+  // let currentHeight = checkHeight(header);
+  // window.addEventListener("orientationchange", () => {
+      // console.log(screen.orientation.angle);
+  // });
 }
 
-test();
+window.addEventListener("orientationchange", fuckinghell);
+// test();
