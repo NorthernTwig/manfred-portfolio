@@ -1,7 +1,5 @@
 "use strict";
 
-module.exports = () => {
-
 let navbar = () => {
 
   let nav = document.querySelector("nav");
@@ -24,5 +22,3 @@ let navChange = (nav) => {
 }
 
 navbar();
-
-}

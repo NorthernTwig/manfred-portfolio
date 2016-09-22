@@ -1,5 +1,4 @@
 "use strict";
-module.exports = () => {
 
 let resizing = () => {
   let image = document.querySelectorAll(".video-container");
@@ -41,4 +40,3 @@ let rescale = (width, imageWidth, imageHeight, image, rows) => {
 }
 
 resizing();
-}
