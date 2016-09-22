@@ -183,8 +183,9 @@ a:hover {
   border-right: 150px solid transparent;
   border-bottom: 150px solid #242F49;
   position: relative;
-  top: 100vh;
-  transition: top 150ms;
+  top: 87vh;
+  opacity: 1;
+  transition: all 150ms;
   margin: 0 auto;
 }
 

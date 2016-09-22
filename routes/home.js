@@ -22,36 +22,43 @@ router.route( "/" )
 
     let loggedIn = req.session.user == undefined ?  false : req.session.user.loggedIn;
 
-    VimeoInformation.findOne(function(req, info) {
+    return VimeoInformation.findOne({})
+    .then((info) => {
       information = info.information;
       header = info.header;
       profilePicture = info.profilePicture;
       bioHeader = info.bioHeader;
       bio = info.bio;
     })
-    .then(() => {
-      return StaticText.findOneAndUpdate({},  new StaticText({
-        bigText: "info.bigText",
-        smallText: "info.smallText",
-        titlePart: "info.titlePart"
-      }), {upsert: true}, function(req, info) {
-        console.log(info);
-        console.log(req);
-        return info;
-      });
+    .then(() => StaticText.findOne({}))
+    .then(smallAndBigText => {
+      if (smallAndBigText) {
+        bigText = smallAndBigText.bigText;
+        smallText = smallAndBigText.smallText;
+        titlePart = smallAndBigText.titlePart;
+      } else {
+        return StaticText.create({ bigText: 'Byt Text', smallText: 'Här också', titlePart: 1 }, function (err, tempText) {
+          if (err) {
+            console.log(err);
+          }
+          bigText = tempText.bigText;
+          smallText = temtText.bigText;
+          titlePart = smallAndBigText.titlePart;
+        })
+      }
     })
     .then(() => {
-      res.render("home", {
-        information: information,
-        header: header,
-        profilePicture: profilePicture,
-        bioHeader: bioHeader,
-        bio: bio,
-        bigText: bigText,
-        smallText: smallText,
-        titlePart: titlePart,
-        loggedIn: loggedIn
-      });
+        res.render("home", {
+          information: information,
+          header: header,
+          profilePicture: profilePicture,
+          bioHeader: bioHeader,
+          bio: bio,
+          bigText: bigText,
+          smallText: smallText,
+          titlePart: titlePart,
+          loggedIn: loggedIn
+        });
     })
     .catch(e => console.log(e));
 

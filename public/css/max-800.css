@@ -15,6 +15,19 @@
     display: none;
   }
 
+  .triangle-connector {
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 150px solid #242F49;
+    position: relative;
+    top: 100vh;
+    opacity: 0;
+    transition: all 150ms;
+    margin: 0 auto;
+  }
+
   .hamburger-container {
     display: inline;
     width: 55px;

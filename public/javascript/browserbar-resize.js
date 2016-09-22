@@ -1,49 +1,14 @@
 "use strict";
 
-// const selector = () => {
-  // let header = document.querySelector("header");
-  // getHeight(header);
-  // window.addEventListener("resize", getHeight.bind(null, header));
-// }
-
-// const getHeight = (header) => {
-  // setTimeout(function() {
-    // let currentHeight = window.getComputedStyle(header).getPropertyValue("height");
-    // header.style.height = currentHeight;
-    // header.firstElementChild.style.height = currentHeight;
-  // }, 100);
-// }
-
-// const resizer = (header) => {
-//     let height = getHeight(header);
-//     header.style.height = height;
-//     header.firstElementChild.style.height = height;
-//     console.log(header);
-// }
-
-// const checkHeight = (header) => {
-//   let currentHeight = window.getComputedStyle(header).getPropertyValue("height");
-//   return currentHeight;
-// }
-//
-// const fuckinghell = () => {
-//   let header = document.querySelector("header");
-//   header.style.height = "100vh";
-//   let tjosan = window.getComputedStyle(header).getPropertyValue("height");
-//   header.style.height = tjosan;
-  // console.log(checkHeight(header));
-  // console.log(tjosan);
-
-  // let currentHeight = checkHeigeadeht(header);
-  // window.addEventListener("orientationchange", () => {
-      // console.log(screen.orientation.angle);
-  // });
-// }
-
 
 const getHeaderElement = () => {
   let header = document.querySelector("header");
   return header;
+}
+
+const getTriangleElement = () => {
+  let triangle = document.querySelector(".triangle-connector");
+  return triangle;
 }
 
 const getHeaderHeight = (header) => {
@@ -59,11 +24,14 @@ const setHeaderHeight = (header, headerHeightInPixels) => {
   header.style.height = headerHeightInPixels;
   header.firstElementChild.style.height = headerHeightInPixels;
   header.children[2].style.top = headerHeightInPixels.split("px")[0] - 50 + "px";
+  header.children[2].style.opacity = 1;
 }
 
 const headerOrientationListener = (header, heightInPixels) => {
+  header.children[2].style.opacity = 0;
   restoreHeaderHeight(header);
   setTimeout(() => {
+    header.children[2].style.opacity = 1;
     heightInPixels = getHeaderHeight(header);
     setHeaderHeight(header, heightInPixels);
   }, 150);
@@ -77,6 +45,3 @@ const initSetHeaderHeight = () => {
 }
 
 initSetHeaderHeight();
-
-// window.addEventListener("orientationchange", fuckinghell);
-// test();

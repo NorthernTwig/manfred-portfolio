@@ -12,7 +12,6 @@ router.route( "/update" )
 
     StaticText.findOne({})
     .then(text => {
-
       if (text) {
 
         text.bigText = bigText;
@@ -31,7 +30,6 @@ router.route( "/update" )
         return newText.save();
 
       }
-
     })
     .then(() => res.redirect("/"))
     .catch(e => {
