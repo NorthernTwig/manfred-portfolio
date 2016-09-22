@@ -181,12 +181,11 @@ a:hover {
   height: 0;
   border-left: 150px solid transparent;
   border-right: 150px solid transparent;
-  border-bottom: 150px solid #242F49;
-  position: relative;
-  top: 87vh;
+  border-bottom: 150px solid #242f49;
+  position: absolute;
   opacity: 1;
-  transition: all 150ms;
-  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .flex {

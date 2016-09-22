@@ -28,11 +28,11 @@ const setHeaderHeight = (header, headerHeightInPixels) => {
 }
 
 const headerOrientationListener = (header, heightInPixels) => {
-  header.children[2].style.opacity = 0;
   restoreHeaderHeight(header);
   setTimeout(() => {
-    header.children[2].style.opacity = 1;
+    // header.children[2].style.top = getTriangleElement();
     heightInPixels = getHeaderHeight(header);
+    getTriangleElement().style.top = heightInPixels;
     setHeaderHeight(header, heightInPixels);
   }, 150);
 }
