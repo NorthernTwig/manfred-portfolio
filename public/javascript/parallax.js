@@ -1,5 +1,7 @@
 "use strict";
 
+module.exports = () => {
+
 // Scroll parrallax
 let scroll = (e) => {
   let header = document.querySelector("header");
@@ -14,3 +16,5 @@ let pageCheck = (header) => {
 }
 
 scroll();
+
+}

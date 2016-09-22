@@ -1,5 +1,7 @@
 "use strict";
 
+module.exports = () => {
+
 const hamburger = () => {
   let ham = document.querySelector(".hamburger-container");
   let sallad = document.querySelector(".hamburger");
@@ -10,3 +12,5 @@ const hamburger = () => {
 }
 
 hamburger();
+
+}

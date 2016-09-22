@@ -1,5 +1,7 @@
 "use strict";
 
+module.exports = () => {
+
 let src = () => {
   let svg = document.querySelectorAll(".video-thumbnail");
   let iframeSrc = null;
@@ -24,3 +26,5 @@ let src = () => {
 }
 
 window.addEventListener("load", src);
+
+}

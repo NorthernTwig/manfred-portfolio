@@ -1,5 +1,6 @@
 "use strict";
 
+module.exports = () => {
 
 const getHeaderElement = () => {
   let header = document.querySelector("header");
@@ -45,3 +46,5 @@ const initSetHeaderHeight = () => {
 }
 
 initSetHeaderHeight();
+
+}

@@ -1,5 +1,7 @@
 "use strict";
 
+module.exports = () => {
+
 let setting = () => {
   let text = document.querySelector(".text-hero");
   let value = text.firstElementChild.getAttribute("data-titlepart");
@@ -35,4 +37,6 @@ let setColors = function() {
 
 setColors();
 
+
 setting();
+}

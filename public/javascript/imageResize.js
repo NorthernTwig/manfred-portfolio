@@ -1,4 +1,5 @@
 "use strict";
+module.exports = () => {
 
 let resizing = () => {
   let image = document.querySelectorAll(".video-container");
@@ -20,7 +21,7 @@ let rescale = (width, imageWidth, imageHeight, image, rows) => {
     widthings = rows[y].children.length;
 
     width = window.outerWidth;
-    
+
     if (width > 800) {
       imageWidth = (width/widthings);
     } else {
@@ -40,3 +41,4 @@ let rescale = (width, imageWidth, imageHeight, image, rows) => {
 }
 
 resizing();
+}

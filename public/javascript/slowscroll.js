@@ -1,5 +1,7 @@
 "use strict";
 
+module.exports = () => {
+
 let currentPosition = () => {
 
   // Where are we?
@@ -131,3 +133,5 @@ let getLinks = () => {
 getLinks();
 window.addEventListener("scroll", getLinks);
 anchorLink();
+
+}
