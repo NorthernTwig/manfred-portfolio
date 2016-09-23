@@ -169,7 +169,7 @@ module.exports = () => {
 
   const navbar = () => {
     let nav = getNavBar();
-    console.log(nav.offsetTop);
+
     navChange(nav);
     window.addEventListener("scroll", navChange.bind(null, nav));
 
@@ -197,13 +197,15 @@ module.exports = () => {
   // Scroll parrallax
   const scroll = (e) => {
     let header = document.querySelector("header");
+    console.log("hit");
     pageCheck(header);
-    window.addEventListener("scroll", pageCheck.bind(null, header), false);
+    window.addEventListener("scroll", pageCheck.bind(null, header));
   }
 
   const pageCheck = (header) => {
     if (window.outerWidth > 800) {
-      header.style.backgroundPosition =  "50% " + (this.pageYOffset / 3) + "px";
+      console.log("Här inne är den laom stor");
+      header.style.backgroundPosition =  "50% " + (window.pageYOffset / 3) + "px";
     }
   }
 

@@ -263,10 +263,12 @@ a:hover {
     top: 20px; }
   a:hover {
     color: #FFFFFF; }
+  nav a {
+    font-size: inherit; }
   li {
     display: block;
-    font-size: 11vw;
-    padding: 25px; }
+    font-size: 3em;
+    padding: 12px; }
   ul {
     position: relative;
     top: 50%;
