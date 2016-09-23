@@ -4,13 +4,12 @@ const secret = require("../config/secret/vimeo-tokens.js");
 const Vimeo = require("vimeo").Vimeo;
 const VimeoInformation = require("../models/vimeoInformation.js");
 const lib = new Vimeo(secret.CLIENT_ID, secret.CLIENT_SECRET, secret.ACCESS_TOKEN);
+const vimoeUsername = "user14628459";
 
 module.exports = () => {
 
-      lib.request({ path : "/users/alanmasferrer/videos" },
+      lib.request({ path : "/users/" + vimoeUsername + "/videos" },
         function (error, body, status_code, headers) {
-          // console.log("sc", status_code);
-          // console.log("hd", headers);
           if (error) {
             return res.render("home", {
               information: "error"
@@ -61,7 +60,7 @@ module.exports = () => {
 
           }
 
-          lib.request({ path : "/users/alanmasferrer" },
+          lib.request({ path : "/users/" + vimoeUsername },
             function (error, body, status_code, headers) {
               if (error) {
                 return res.render("home", {
@@ -71,17 +70,17 @@ module.exports = () => {
 
               profilePicture = body.pictures.sizes[(body.pictures.sizes.length - 1)].link;
 
-              VimeoInformation.findOneAndUpdate({}, new VimeoInformation({
-                  information: videoCollection,
-                  header: header,
-                  profilePicture: profilePicture,
-                  bioHeader: bioHeader,
-                  bio: bio
-               }), {upsert:true}, (err, account) => {
-                 console.log(account);
-                 console.log("Kontroll på Vimeo");
-               });
-
+              VimeoInformation.findOne({})
+              .then((info) => {
+                  // console.log(info);
+                  info.information = videoCollection;
+                  info.header = header;
+                  info.profilePicture = profilePicture;
+                  info.bioHeader = bioHeader;
+                  info.bio = bio;
+                  return info.save();
+              })
+              .catch((error) => console.log(error));
 
             });
 
