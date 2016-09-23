@@ -5,6 +5,8 @@ const exphbs = require("express-handlebars");
 const session = require("express-session");
 const bodyParser = require('body-parser')
 const apiRequest = require("../routes/request");
+const fs = require("fs");
+const sass = require('node-sass');
 const app = express();
 const PORT = process.env.PORT || 8081;
 const secret = require("./secret/session-secret.js");
@@ -36,8 +38,20 @@ module.exports = () => {
 
   app.use(express.static("public"));
 
+  sass.render({
+      file: "public/css/main.scss"
+  }, (err, res) => {
+      if (err) {
+          console.log(err);
+      }
 
-  // Skaffa nya nycklar retard
+      fs.writeFile("public/css/sassy.css", res.css, err => {
+          if (err) {
+              console.log(err);
+          }
+      });
+  });
+
   // setInterval(function() {
     // apiRequest();
   // }, 3600000);

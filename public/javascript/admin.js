@@ -1,6 +1,6 @@
 "use strict";
 
-let findHeader = () => {
+const findHeader = () => {
   let headerInput = document.querySelector(".header");
   let tinyInput = document.querySelector(".tiny-text");
 
@@ -22,7 +22,7 @@ let findHeader = () => {
 
 }
 
-let testColor = function() {
+const testColor = function() {
   let value = this.value - 1;
   let testing = document.querySelector(".text-hero").firstElementChild;
 
@@ -38,12 +38,12 @@ let testColor = function() {
 
 }
 
-let headerText = () => {
+const headerText = () => {
   let header = document.querySelector(".text-hero");
   return header;
 }
 
-let setColor = function() {
+const setColor = function() {
   let headerText = document.querySelector(".text-hero").firstElementChild;
   let text = headerText.textContent;
   let splitted = text.split(" ");

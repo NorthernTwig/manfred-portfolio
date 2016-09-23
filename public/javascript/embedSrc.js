@@ -1,26 +1,30 @@
 "use strict";
 
-let src = () => {
-  let svg = document.querySelectorAll(".video-thumbnail");
-  let iframeSrc = null;
-  let theTarget = null;
+module.exports = () => {
 
-  for (let i = 0; i < svg.length; i++) {
-    svg[i].firstElementChild.addEventListener("click", function(e) {
-      let values = this.parentNode.getAttribute("data-value");
+  const src = () => {
+    let svg = document.querySelectorAll(".video-thumbnail");
+    let iframeSrc = null;
+    let theTarget = null;
 
-      let div = document.createElement('p');
-      div.innerHTML = values;
-      let iframe = div.firstChild;
+    for (let i = 0; i < svg.length; i++) {
+      svg[i].firstElementChild.addEventListener("click", function(e) {
+        let values = this.parentNode.getAttribute("data-value");
 
-      iframeSrc = iframe.getAttribute("src") + "&amp;autoplay=1";
-      iframe.setAttribute("src", iframeSrc);
+        let div = document.createElement('p');
+        div.innerHTML = values;
+        let iframe = div.firstChild;
 
-      this.parentElement.appendChild(iframe);
-      this.remove();
-    });
+        iframeSrc = iframe.getAttribute("src") + "&amp;autoplay=1";
+        iframe.setAttribute("src", iframeSrc);
+
+        this.parentElement.appendChild(iframe);
+        this.remove();
+      });
+    }
+
   }
 
-}
+  window.addEventListener("load", src);
 
-window.addEventListener("load", src);
+}
