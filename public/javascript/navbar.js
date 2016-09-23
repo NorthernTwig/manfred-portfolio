@@ -1,9 +1,13 @@
 "use strict";
 
 module.exports = () => {
-  const navbar = () => {
 
-    let nav = document.querySelector("nav");
+  const getNavBar = () => {
+    return document.querySelector("nav");
+  }
+
+  const navbar = () => {
+    let nav = getNavBar();
 
     navChange(nav);
     window.addEventListener("scroll", navChange.bind(null, nav));
