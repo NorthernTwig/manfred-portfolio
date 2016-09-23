@@ -204,7 +204,6 @@ module.exports = () => {
 
   const pageCheck = (header) => {
     if (window.outerWidth > 800) {
-      console.log("Här inne är den laom stor");
       header.style.backgroundPosition =  "50% " + (window.pageYOffset / 3) + "px";
     }
   }

@@ -1,22 +1,24 @@
 "use strict";
 
 const router = require("express").Router();
+const userCredentials = require("../config/secret/pass-and-username");
+
 
 router.route( "/login" )
   .get(( req, res ) => {
     res.render("login");
   })
   .post(( req, res ) => {
-    if (req.body.username === "kontroll1" && req.body.password === "kontroll2") {
+    if (req.body.username === userCredentials.USERNAME && req.body.password === userCredentials.PASSWORD) {
 
       req.session.user = {
-                currentUser: "kontroll1",
+                currentUser: "Manfred",
                 loggedIn: true
       };
 
       return res.redirect("/");
     } else {
-      res.send("Fuck off");
+      res.send("You're not Manfred.");
     }
   });
 
