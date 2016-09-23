@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Hind:400,600);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import "max-800";
 
 $font-hind: 'Hind', sans-serif;
 $font-montserrat: 'Montserrat', sans-serif;
@@ -277,3 +276,5 @@ a:hover {
 .text-hero h5 {
   font-size: 2vw;
 }
+
+@import "max-800";
