@@ -29,8 +29,10 @@ const setHeaderHeight = (header, headerHeightInPixels) => {
 
 const headerOrientationListener = (header, heightInPixels) => {
   restoreHeaderHeight(header);
+  getTriangleElement().style.opacity = 0;
   setTimeout(() => {
     // header.children[2].style.top = getTriangleElement();
+    getTriangleElement().style.opacity = 1;
     heightInPixels = getHeaderHeight(header);
     getTriangleElement().style.top = heightInPixels;
     setHeaderHeight(header, heightInPixels);
@@ -40,6 +42,7 @@ const headerOrientationListener = (header, heightInPixels) => {
 const initSetHeaderHeight = () => {
   let heightInPixels = "";
   let header = getHeaderElement();
+  getTriangleElement().style.opacity = 0;
   headerOrientationListener(header, heightInPixels);
   window.addEventListener("orientationchange", headerOrientationListener.bind(null, header, heightInPixels), false);
 }
