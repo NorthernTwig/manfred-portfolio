@@ -72,7 +72,6 @@ module.exports = () => {
 
               VimeoInformation.findOne({})
               .then((info) => {
-                  // console.log(info);
                   info.information = videoCollection;
                   info.header = header;
                   info.profilePicture = profilePicture;
