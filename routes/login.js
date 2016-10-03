@@ -2,6 +2,7 @@
 
 const router = require("express").Router();
 const userCredentials = require("../config/secret/pass-and-username");
+const passwordHash = require("password-hash");
 
 
 router.route( "/login" )
@@ -9,7 +10,9 @@ router.route( "/login" )
     res.render("login");
   })
   .post(( req, res ) => {
-    if (req.body.username === userCredentials.USERNAME && req.body.password === userCredentials.PASSWORD) {
+
+    let correctPassword = passwordHash.verify(req.body.password, userCredentials.PASSWORD);
+    if (req.body.username === userCredentials.USERNAME && correctPassword) {
 
       req.session.user = {
                 currentUser: "Manfred",
