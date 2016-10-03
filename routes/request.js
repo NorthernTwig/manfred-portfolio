@@ -4,7 +4,7 @@ const secret = require("../config/secret/vimeo-tokens.js");
 const Vimeo = require("vimeo").Vimeo;
 const VimeoInformation = require("../models/vimeoInformation.js");
 const lib = new Vimeo(secret.CLIENT_ID, secret.CLIENT_SECRET, secret.ACCESS_TOKEN);
-const vimoeUsername = "user14628459";
+const vimoeUsername = "manfredohlsson";
 
 module.exports = () => {
 
