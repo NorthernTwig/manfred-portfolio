@@ -52,9 +52,9 @@ module.exports = () => {
       });
   });
 
-  // setInterval(function() {
+  setInterval(() => {
     apiRequest();
-  // }, 3600000);
+  }, 3600000);
 
   app.use("/", require("../routes/home"));
   app.use("/", require("../routes/update"));
