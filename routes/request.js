@@ -29,8 +29,14 @@ module.exports = () => {
           for (let i = 0; i < body.data.length; i++) {
 
             if (!bio) {
-              bioHeader = body.data[i].user.bio.split(".")[0];
-              bio = body.data[i].user.bio;
+              let bioArray = [];
+              let splitted = body.data[i].user.bio.split(".");
+              for (let j = 0; j < splitted.length; j++) {
+                bioHeader = splitted[0];
+                j === 0 ? null : bioArray.push(splitted[j]);
+              }
+              bio = bioArray.join(".").substring(1);
+
             }
 
             if (!header) {
