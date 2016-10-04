@@ -17,6 +17,9 @@ const vimeoInformation = mongoose.Schema({
     },
     bio: {
       type: String
+    },
+    number: {
+      type: String
     }
 });
 

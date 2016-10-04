@@ -16,6 +16,7 @@ router.route( "/" )
     let profilePicture = null;
     let bioHeader = null;
     let bio = null;
+    let number = '';
     let bigText = null;
     let smallText = null;
     let titlePart = null;
@@ -29,6 +30,7 @@ router.route( "/" )
       profilePicture = info.profilePicture;
       bioHeader = info.bioHeader;
       bio = info.bio;
+      number = info.number;
     })
     .then(() => StaticText.findOne({}))
     .then(smallAndBigText => {
@@ -54,6 +56,7 @@ router.route( "/" )
           profilePicture: profilePicture,
           bioHeader: bioHeader,
           bio: bio,
+          number: number,
           bigText: bigText,
           smallText: smallText,
           titlePart: titlePart,

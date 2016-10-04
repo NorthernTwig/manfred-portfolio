@@ -25,6 +25,7 @@ module.exports = () => {
           let embedString = null;
           let $ = null;
           let slicedEmbed = null;
+          let manfredNumberString = "";
 
           for (let i = 0; i < body.data.length; i++) {
 
@@ -36,6 +37,13 @@ module.exports = () => {
                 j === 0 ? null : bioArray.push(splitted[j]);
               }
               bio = bioArray.join(".").substring(1);
+              let splitOnNumber = bio.split('+');
+              bio = splitOnNumber[0];
+              let manfredNumber = [];
+              manfredNumber.push('+');
+              manfredNumber.push(splitOnNumber[splitOnNumber.length -1]);
+              manfredNumberString = manfredNumber.join('');
+              // let test = splitOnPlusForPhone.join();
 
             }
 
@@ -83,6 +91,7 @@ module.exports = () => {
                   info.profilePicture = profilePicture;
                   info.bioHeader = bioHeader;
                   info.bio = bio;
+                  info.number = manfredNumberString;
                   return info.save();
               })
               .catch((error) => console.log(error));
