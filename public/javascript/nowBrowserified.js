@@ -135,7 +135,8 @@ module.exports = () => {
 
       widthings = rows[y].children.length;
 
-      width = window.outerWidth;
+      //   width = window.outerWidth;
+      width = screen.width;
 
       if (width > 800) {
         imageWidth = (width/widthings);
@@ -143,7 +144,8 @@ module.exports = () => {
         imageWidth = (width/1);
       }
 
-      imageHeight = window.innerHeight < (imageWidth/16 * 9) ? window.innerHeight : (imageWidth/16 * 9);
+    //   imageHeight = window.innerHeight < (imageWidth/16 * 9) ? window.innerHeight : (imageWidth/16 * 9);
+      imageHeight = screen.height < (imageWidth/16 * 9) ? screen.height : (imageWidth/16 * 9);
 
       for (let i = 0; i < rows[y].children.length; i++) {
         rows[y].children[i].style.width = imageWidth + "px";
