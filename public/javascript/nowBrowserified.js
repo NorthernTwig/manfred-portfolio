@@ -136,16 +136,16 @@ module.exports = () => {
       widthings = rows[y].children.length;
 
       //   width = window.outerWidth;
-      width = screen.width;
+      width = document.documentElement.clientWidth;
 
       if (width > 800) {
         imageWidth = (width/widthings);
       } else {
         imageWidth = (width/1);
       }
-
+// document.documentElement.clientHeight
     //   imageHeight = window.innerHeight < (imageWidth/16 * 9) ? window.innerHeight : (imageWidth/16 * 9);
-      imageHeight = screen.height < (imageWidth/16 * 9) ? screen.height : (imageWidth/16 * 9);
+      imageHeight = document.documentElement.clientHeight < (imageWidth/16 * 9) ? document.documentElement.clientHeight : (imageWidth/16 * 9);
 
       for (let i = 0; i < rows[y].children.length; i++) {
         rows[y].children[i].style.width = imageWidth + "px";
