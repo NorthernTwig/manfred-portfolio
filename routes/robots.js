@@ -3,9 +3,9 @@
 const router = require("express").Router();
 
 
-router.route( "/robots" )
+router.route( "robots.txt" )
   .get(( req, res ) => {
-    res.send("User-agent: *\nDisallow: /");
+    return res.send("User-agent: *\nDisallow: /");
 });
 
 module.exports = router;
