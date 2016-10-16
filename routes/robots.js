@@ -3,7 +3,7 @@
 const router = require("express").Router();
 
 
-router.route( "/robots.txt" )
+router.route( "/robots" )
   .get(( req, res ) => {
     res.render("User-agent: *\nDisallow: /");
   })
