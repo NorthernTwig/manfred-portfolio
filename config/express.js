@@ -8,7 +8,7 @@ const apiRequest = require("../routes/request");
 const fs = require("fs");
 const sass = require('node-sass');
 const app = express();
-const http = require("http");
+const http = require("http").Server(app);
 const PORT = process.env.PORT || 8080;
 const secret = require("./secret/session-secret.js");
 
