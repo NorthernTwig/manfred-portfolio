@@ -6,11 +6,11 @@ const Schema = mongoose.Schema;
 const staticText = mongoose.Schema({
     bigText: {
       type: String,
-      default: "Fuckin' hell"
+      default: "Manfred"
     },
     smallText: {
       type: String,
-      default: "Twice Fuckin' hell"
+      default: "Ohlsson"
     },
     titlePart: {
       type: Number,

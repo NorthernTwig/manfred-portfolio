@@ -43,7 +43,6 @@ module.exports = () => {
               manfredNumber.push('+');
               manfredNumber.push(splitOnNumber[splitOnNumber.length -1]);
               manfredNumberString = manfredNumber.join('');
-              // let test = splitOnPlusForPhone.join();
 
             }
 
@@ -59,7 +58,7 @@ module.exports = () => {
             video.rowEnd = false;
             video.title = body.data[i].name;
             video.embed = body.data[i].embed.html.split("id=0").join("id=0&color=242F49&title=0&byline=0&portrait=0");
-            video.thumbnail = body.data[i].pictures.sizes[5].link;
+            video.thumbnail = body.data[i].pictures.sizes[body.data[i].pictures.sizes.length - 1].link;
 
             if (i % 3 === 0) {
               video.rowStart = true;
