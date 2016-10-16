@@ -63,11 +63,11 @@ module.exports = () => {
 
 
 
+    app.use("/", require("../routes/robots"));
     app.use("/", require("../routes/home"));
     app.use("/", require("../routes/update"));
     app.use("/", require("../routes/login"));
     app.use("/", require("../routes/logout"));
-    app.use("/", require("../routes/robots"));
 
 
     app.use("*", (req, res) => {
