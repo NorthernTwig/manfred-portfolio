@@ -15,7 +15,7 @@ const secret = require("./secret/session-secret.js");
 module.exports = () => {
 
     app.get("/robots.txt", (req, res) => {
-        res.send("User-agent: *\nDisallow: /");
+        return res.send("User-agent: *\nDisallow: /");
     });
 
     app.use(session({
