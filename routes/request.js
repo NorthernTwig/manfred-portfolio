@@ -5,6 +5,8 @@ const Vimeo = require("vimeo").Vimeo;
 const VimeoInformation = require("../models/vimeoInformation.js");
 const lib = new Vimeo(secret.CLIENT_ID, secret.CLIENT_SECRET, secret.ACCESS_TOKEN);
 const vimoeUsername = "manfredohlsson";
+const headerSize = "1920x1080";
+const thumbnailSize = "1280x720";
 
 module.exports = () => {
 
@@ -41,24 +43,25 @@ module.exports = () => {
               bio = splitOnNumber[0];
               let manfredNumber = [];
               manfredNumber.push('+');
-              manfredNumber.push(splitOnNumber[splitOnNumber.length -1]);
+              manfredNumber.push(splitOnNumber[splitOnNumber.length - 1]);
               manfredNumberString = manfredNumber.join('');
-
             }
 
             if (!header) {
-              for (let j = 0; j < body.data[i].pictures.sizes.length; j++) {
-                if (body.data[i].pictures.sizes[j].width >= 1280) {
-                  header = body.data[i].pictures.sizes[j].link;
-                }
-              }
+                let headerLink = body.data[i].pictures.sizes[0].link;
+                let headerLinkNoSize = headerLink.split('100x75');
+                let headerLinkBigSize = headerLinkNoSize.join(headerSize);
+                header = headerLinkBigSize;
             }
 
             video.rowStart = false;
             video.rowEnd = false;
             video.title = body.data[i].name;
             video.embed = body.data[i].embed.html.split("id=0").join("id=0&color=242F49&title=0&byline=0&portrait=0");
-            video.thumbnail = body.data[i].pictures.sizes[body.data[i].pictures.sizes.length - 1].link;
+            let thumbnailLink = body.data[i].pictures.sizes[0].link;
+            let thumbnailLinkNoSize = thumbnailLink.split('100x75');
+            let thumbnailLinkBigSize = thumbnailLinkNoSize.join(thumbnailSize);
+            video.thumbnail = thumbnailLinkBigSize;
 
             if (i % 3 === 0) {
               video.rowStart = true;
