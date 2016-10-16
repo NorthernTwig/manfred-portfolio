@@ -66,6 +66,11 @@ module.exports = () => {
     app.use("/", require("../routes/login"));
     app.use("/", require("../routes/logout"));
 
+    app.get("/robots.txt", (req, res) => {
+        res.type("test/plain");
+        res.send("User-agent: *\nDisallow: /");
+    };
+
     app.use("*", (req, res) => {
         return res.redirect("/");
     });
