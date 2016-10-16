@@ -14,10 +14,6 @@ const secret = require("./secret/session-secret.js");
 
 module.exports = () => {
 
-    app.get("/robots.txt", (req, res) => {
-        return res.send("User-agent: *\nDisallow: /");
-    });
-
     app.use(session({
         name: secret.NAME,
         secret: secret.SECRET,
@@ -71,6 +67,7 @@ module.exports = () => {
     app.use("/", require("../routes/update"));
     app.use("/", require("../routes/login"));
     app.use("/", require("../routes/logout"));
+    app.use("/", require("../routes/robots"));
 
 
     app.use("*", (req, res) => {
