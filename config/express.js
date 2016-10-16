@@ -8,12 +8,12 @@ const apiRequest = require("../routes/request");
 const fs = require("fs");
 const sass = require('node-sass');
 const app = express();
+const http = require("http").Server(app);
 const PORT = process.env.PORT || 8081;
 const secret = require("./secret/session-secret.js");
 
 module.exports = () => {
 
-    //Creates session
     app.use(session({
         name: secret.NAME,
         secret: secret.SECRET,
@@ -70,7 +70,7 @@ module.exports = () => {
         return res.redirect("/");
     });
 
-    app.listen(PORT, function () {
+    http.listen(PORT, function () {
         console.log("Express up. " + PORT);
     });
 }
